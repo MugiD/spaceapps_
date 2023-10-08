@@ -49,7 +49,14 @@ const Planets = [{
     model: '/models/neptune.glb',
     description: 'Neptune is the eighth and furthest planet from the Sun in the Solar System. It is the fourth-largest planet by diameter and the third-largest by mass.',
     route: '/neptune'
-}]
+},
+{
+    name: 'Moon',
+    model: '/models/moon.glb',
+    description: 'Moon is the only Earth satellite',
+    route: '/neptune'
+}
+]
 
 
 function PlanetList() {

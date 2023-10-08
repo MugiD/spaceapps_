@@ -22,7 +22,7 @@ const data = [
         text:'3d modeling'
     },
     {
-        image:"/mee.jpg",
+        image:"/Alikh.jpg",
         name:'Alikhan Serikov',
         text:'designer'
     },
