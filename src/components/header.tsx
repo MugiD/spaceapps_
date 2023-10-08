@@ -4,8 +4,8 @@ import Login from "./login-btn";
 
 export default function Header() {
   return (
-    <div className="lg:mx-16 mx-4 mt-5 flex justify-between items-center">
-      <div>
+    <div className="fixed top-0 left-0 right-0 z-10 bg-black lg:px-16 px-4 py-5 flex justify-between items-center">
+      <div >
         <Link href="./">
           <Image src="/logo.svg" alt="logo" width={150} height={75} />
         </Link>
