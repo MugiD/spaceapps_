@@ -17,7 +17,7 @@ const data = [
         text:'web-dev, AI developer'
     },
     {
-        image:"/mee.jpg",
+        image:"/Yera.jpg",
         name:'Yerassyl Serik',
         text:'3d modeling'
     },
