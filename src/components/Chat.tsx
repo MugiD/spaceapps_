@@ -2,19 +2,33 @@
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 
-export default function Chat() {
-  const [input, setInput] = useState("");
+
+export default function Chat({planetname}: {planetname: string}) {
+  const [input, setInput] = useState('');
   const [messages, setMessages] = useState<any[]>([]);
 
   const sendMessage = async (newMessage: string) => {
-    // setMessages([...messages, { content: newMessage, role: 'user' }]);
+    setMessages([...messages, { content: newMessage, role: 'user' }]);
     if (newMessage !== "") {
-      const newMessages = [...messages, { role: "user", content: newMessage }];
-      setMessages((prevMsgs) => [
-        ...prevMsgs,
-        { role: "user", content: newMessage },
-      ]);
-      const last1Messages = newMessages.slice(-1);
+
+    // const newMessages = [...messages, { role: "user", content: newMessage }];
+    // setMessages((prevMsgs) => [
+    //   ...prevMsgs,
+    //   { role: "user", content: newMessage },
+    // ]);
+    // const last1Messages = newMessages.slice(-1);
+
+    let newnewmessage = `act as if you are a guide named Nika that helps people travel on ${planetname}. ${newMessage}`
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        messages: [newnewmessage],
+        // messages: [...last1Messages, { role: "system", content:  }],
+      }), 
+    });
 
       const response = await fetch("/api/chat", {
         method: "POST",
