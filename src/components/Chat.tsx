@@ -49,17 +49,17 @@ export default function Chat() {
     <div>
     <div className={"w-full flex-1  border-zinc-100"}>
       <div
-        className={`relative h-screen bg-black justify-center flex flex-row overflow-x-hidden  `}
+        className={`relative h-screen bg-black justify-center flex flex-row overflow-x-hidden`}
       >
         <div className="">
         {messages.map(({ content, role }, index) => (
-          <div  className={` my-10 flex md:w-[300px] w-[200px] lg:w-[400px] text-white bg-opacity-60  mb-2 ${role === "assistant" ? "bg-[#282A37] mr-[40%] text-left rounded-tl-3xl rounded-tr-3xl rounded-br-3xl"  : " bg-[#0057FF] ml-[40%] rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl"}` } key={index}>
+          <div  className={`my-10 flex md:w-[300px] w-[200px] lg:w-[400px] text-white bg-opacity-60  mb-2 ${role === "assistant" ? "bg-[#282A37] mr-[40%] text-left rounded-tl-3xl rounded-tr-3xl rounded-br-3xl"  : " bg-[#0057FF] ml-[40%] rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl"}` } key={index}>
             <div className="flex p-4 text-base md:gap-2 md:py-6  lg:px-0">
               {/* <div className="w-[40px] h-[40px]">
                 {role === "assistant" ?  <GlobeEuropeAfricaIcon />: <></> }
               </div> */}
   
-              <div className="flex  flex-col sm:flex-row">
+              <div className="flex flex-col sm:flex-row px-4">
                 <div className="">
                   <div
                     className="prose break-all "
@@ -94,8 +94,8 @@ export default function Chat() {
             <input
               aria-label="chat input"
               required
-              className="m-0 w-full p-0 py-3 pl-4 pr-12 text-white bg-[#282A37] rounded-md" 
-              placeholder="Ask Earth anything!!"
+              className="m-0 w-full p-0 py-3 pl-4 pr-12 text-white bg-[#282A37] rounded-md focus:outline-0" 
+              placeholder="Ask you guide anything!!"
               value={input}
               onKeyDown={(e) => {
                 if (e.key === "Enter") {
