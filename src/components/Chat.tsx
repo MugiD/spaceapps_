@@ -7,29 +7,30 @@ import {
 import { useState } from "react";
 
 
-export default function Chat() {
+export default function Chat({planetname}: {planetname: string}) {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<any[]>([]);
 
   const sendMessage = async (newMessage: string) => {
-    // setMessages([...messages, { content: newMessage, role: 'user' }]);
+    setMessages([...messages, { content: newMessage, role: 'user' }]);
     if (newMessage !== "") {
-    const newMessages = [...messages, { role: "user", content: newMessage }];
-    setMessages((prevMsgs) => [
-      ...prevMsgs,
-      { role: "user", content: newMessage },
-    ]);
-    const last1Messages = newMessages.slice(-1);
+    // const newMessages = [...messages, { role: "user", content: newMessage }];
+    // setMessages((prevMsgs) => [
+    //   ...prevMsgs,
+    //   { role: "user", content: newMessage },
+    // ]);
+    // const last1Messages = newMessages.slice(-1);
 
-
+    let newnewmessage = `act as if you are a guide named Nika that helps people travel on ${planetname}. ${newMessage}`
     const response = await fetch("/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        messages: [last1Messages],
-      }),
+        messages: [newnewmessage],
+        // messages: [...last1Messages, { role: "system", content:  }],
+      }), 
     });
 
 
@@ -55,10 +56,7 @@ export default function Chat() {
         {messages.map(({ content, role }, index) => (
           <div  className={`my-10 flex md:w-[300px] w-[200px] lg:w-[400px] text-white bg-opacity-60  mb-2 ${role === "assistant" ? "bg-[#282A37] mr-[40%] text-left rounded-tl-3xl rounded-tr-3xl rounded-br-3xl"  : " bg-[#0057FF] ml-[40%] rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl"}` } key={index}>
             <div className="flex p-4 text-base md:gap-2 md:py-6  lg:px-0">
-              {/* <div className="w-[40px] h-[40px]">
-                {role === "assistant" ?  <GlobeEuropeAfricaIcon />: <></> }
-              </div> */}
-  
+ 
               <div className="flex flex-col sm:flex-row px-4">
                 <div className="">
                   <div
@@ -72,9 +70,6 @@ export default function Chat() {
               </div>
 
 
-              {/* <div className="w-[40px] h-[40px]">
-                {role === "assistant" ? <></>: <UserCircleIcon/>  }
-              </div> */}
   
               
             </div>

@@ -71,7 +71,7 @@ function PlanetList() {
                         </div>
                         <h2 className='text-xl font-bold mb-2'>{planet.name}</h2>
                         <p className='mb-4'>{planet.description}</p>
-                        <Link href="/mars" className='bg-[#BC4627] text-white py-2 px-4 rounded-sm hover:opacity-75'>Know more</Link>
+                        <Link href={`guide/${planet.route}`} className='bg-[#BC4627] text-white py-2 px-4 rounded-sm hover:opacity-75'>Know more</Link>
                         </div> 
                 ))}
             </div>
