@@ -2,9 +2,12 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import { Metadata } from "next";
 import Header from "@/components/header";
+import { NextAuthProvider } from "./providers";
 
-
-const montserrat = Montserrat({ subsets: ["latin", 'cyrillic'], display: "swap" });
+const montserrat = Montserrat({
+  subsets: ["latin", "cyrillic"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Phalanx of Fate",
@@ -21,8 +24,10 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <html lang="en" suppressHydrationWarning className={montserrat.className}>
         <head />
         <body>
+          <NextAuthProvider>
             <Header />
-            <div className="">{children}</div>
+            <div>{children}</div>
+          </NextAuthProvider>
         </body>
       </html>
     </>

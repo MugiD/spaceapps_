@@ -41,7 +41,7 @@ function Team() {
             <div>
                 <h1 className="text-3xl text-center font-bold">ABOUT THE TEAM</h1>
             </div>
-            <div className="my-10 grid grid-cols-3 gap-9 mx-16 justify-items-center">
+            <div className="my-10 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-9 mx-16 justify-items-center">
             {
                 data.map((currmember, index) :any => {
                     let member = (

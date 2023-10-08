@@ -6,7 +6,7 @@ import StaticModel from "./StaticModel";
 
 const ModelViewer = ({ modelPath, scale = 1, position = [0, 0, 0] }) => {
   return (
-    <div className="h-[200px] w-1/2">
+    <div className="h-[200px] w-[260px]">
       <Canvas>
         <ambientLight intensity={1.6} />
         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

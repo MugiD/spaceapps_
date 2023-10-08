@@ -53,7 +53,7 @@ const Planets = [{
 {
     name: 'Moon',
     model: '/models/moon.glb',
-    description: 'Moon is the only Earth satellite',
+    description: 'Moon is the only satellite of Earth and is the fifth largest satellite in the Solar System.',
     route: '/neptune'
 }
 ]
