@@ -16,8 +16,8 @@ function About() {
         <Image
           src="./astro.svg"
           alt="astro"
-          width={700}
-          height={700}
+          width={500}
+          height={500}
           className="brightness-110"
         />
         <div>
